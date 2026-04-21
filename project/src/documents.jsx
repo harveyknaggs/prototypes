@@ -1,22 +1,33 @@
-// Documents card — collapsed by default, click to expand file list
+// Documents card — hover to preview animation, click the icon to expand
 function DocumentsCard({ delay = 0 }) {
   const [open, setOpen] = useState(false);
+  const [cardHov, setCardHov] = useState(false);
   const [hoveredRow, setHoveredRow] = useState(null);
+  const active = open || cardHov;
 
   return (
-    <Card delay={delay} style={{ padding: 0, overflow: 'hidden' }}>
+    <Card
+      delay={delay}
+      style={{
+        padding: 0, overflow: 'hidden',
+        boxShadow: active ? 'var(--shadow-lg)' : 'var(--shadow-md)',
+        transform: active && !open ? 'translateY(-2px)' : 'translateY(0)',
+      }}
+      onMouseEnter={() => setCardHov(true)}
+      onMouseLeave={() => setCardHov(false)}
+    >
       {/* Header row — click the icon to toggle */}
       <div
         style={{
           display: 'flex', alignItems: 'center', gap: 16,
           padding: '20px 22px',
-          background: open ? 'var(--bg)' : 'transparent',
+          background: active ? 'var(--bg)' : 'transparent',
           borderRadius: open ? 'var(--radius-lg) var(--radius-lg) 0 0' : 'var(--radius-lg)',
-          transition: 'background 200ms ease',
+          transition: 'background 220ms ease',
         }}
       >
-        {/* Animated stacked document thumbnails — click to toggle */}
-        <DocIconStack open={open} onClick={() => setOpen((v) => !v)} />
+        {/* Animated stacked document thumbnails — animates on card hover, click to toggle */}
+        <DocIconStack active={active} onClick={() => setOpen((v) => !v)} />
 
         {/* Title + meta */}
         <div style={{ flex: 1, minWidth: 0 }}>
@@ -133,20 +144,16 @@ function DocumentsCard({ delay = 0 }) {
   );
 }
 
-// Decorative stacked miniature document icons — clickable toggle
-function DocIconStack({ open, onClick }) {
-  const [hov, setHov] = useState(false);
-  const active = open || hov;
+// Decorative stacked miniature document icons — animation driven by parent's hover state
+function DocIconStack({ active, onClick }) {
   return (
     <button
       onClick={onClick}
-      aria-label={open ? 'Collapse documents' : 'Expand documents'}
+      aria-label="Toggle documents"
       style={{
         position: 'relative', width: 56, height: 56, flexShrink: 0,
         padding: 0, background: 'transparent', border: 'none', cursor: 'pointer',
       }}
-      onMouseEnter={() => setHov(true)}
-      onMouseLeave={() => setHov(false)}
     >
       {documents.map((d, i) => {
         const offsets = [

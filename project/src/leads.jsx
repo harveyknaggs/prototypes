@@ -1,8 +1,10 @@
-// Leads card — collapsed by default, click to expand enquiry list
+// Leads card — hover to preview animation, click the icon to expand
 function LeadsCard({ delay = 0 }) {
   const [open, setOpen] = useState(false);
+  const [cardHov, setCardHov] = useState(false);
   const [expanded, setExpanded] = useState(null);
   const [filter, setFilter] = useState('all');
+  const active = open || cardHov;
 
   const filtered = leads.filter((l) => {
     if (filter === 'all') return true;
@@ -14,19 +16,28 @@ function LeadsCard({ delay = 0 }) {
   const hotCount = leads.filter((l) => l.hot).length;
 
   return (
-    <Card delay={delay} style={{ padding: 0, overflow: 'hidden' }}>
+    <Card
+      delay={delay}
+      style={{
+        padding: 0, overflow: 'hidden',
+        boxShadow: active ? 'var(--shadow-lg)' : 'var(--shadow-md)',
+        transform: active && !open ? 'translateY(-2px)' : 'translateY(0)',
+      }}
+      onMouseEnter={() => setCardHov(true)}
+      onMouseLeave={() => setCardHov(false)}
+    >
       {/* Header row — click the icon to toggle */}
       <div
         style={{
           display: 'flex', alignItems: 'center', gap: 16,
           padding: '20px 22px',
-          background: open ? 'var(--bg)' : 'transparent',
+          background: active ? 'var(--bg)' : 'transparent',
           borderRadius: open ? 'var(--radius-lg) var(--radius-lg) 0 0' : 'var(--radius-lg)',
-          transition: 'background 200ms ease',
+          transition: 'background 220ms ease',
         }}
       >
-        {/* Animated avatar cluster — click to toggle */}
-        <LeadAvatarCluster open={open} onClick={() => setOpen((v) => !v)} />
+        {/* Animated avatar cluster — animates on card hover, click to toggle */}
+        <LeadAvatarCluster active={active} onClick={() => setOpen((v) => !v)} />
 
         {/* Title + meta */}
         <div style={{ flex: 1, minWidth: 0 }}>
@@ -132,20 +143,16 @@ function LeadsCard({ delay = 0 }) {
   );
 }
 
-// Overlapping avatar circles — clickable toggle
-function LeadAvatarCluster({ open, onClick }) {
-  const [hov, setHov] = useState(false);
-  const active = open || hov;
+// Overlapping avatar circles — animation driven by parent's hover state
+function LeadAvatarCluster({ active, onClick }) {
   return (
     <button
       onClick={onClick}
-      aria-label={open ? 'Collapse leads' : 'Expand leads'}
+      aria-label="Toggle leads"
       style={{
         position: 'relative', width: 56, height: 56, flexShrink: 0,
         padding: 0, background: 'transparent', border: 'none', cursor: 'pointer',
       }}
-      onMouseEnter={() => setHov(true)}
-      onMouseLeave={() => setHov(false)}
     >
       {leads.map((l, i) => {
         // fan out positions
