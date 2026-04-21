@@ -14,19 +14,22 @@ function LeadsCard({ delay = 0 }) {
   const hotCount = leads.filter((l) => l.hot).length;
 
   return (
-    <Card delay={delay} style={{ padding: 0, overflow: 'hidden' }}>
-      {/* Toggle header — always visible */}
+    <Card
+      delay={delay}
+      style={{ padding: 0, overflow: 'hidden' }}
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
+    >
+      {/* Toggle header — hover anywhere on the card to expand */}
       <button
         onClick={() => setOpen((v) => !v)}
         style={{
           display: 'flex', alignItems: 'center', gap: 16,
           padding: '20px 22px', width: '100%', textAlign: 'left',
-          background: 'transparent',
+          background: open ? 'var(--bg)' : 'transparent',
           borderRadius: open ? 'var(--radius-lg) var(--radius-lg) 0 0' : 'var(--radius-lg)',
           transition: 'background 200ms ease',
         }}
-        onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--bg)'; }}
-        onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; }}
       >
         {/* Animated avatar cluster */}
         <LeadAvatarCluster open={open} />
