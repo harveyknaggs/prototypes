@@ -14,25 +14,19 @@ function LeadsCard({ delay = 0 }) {
   const hotCount = leads.filter((l) => l.hot).length;
 
   return (
-    <Card
-      delay={delay}
-      style={{ padding: 0, overflow: 'hidden' }}
-      onMouseEnter={() => setOpen(true)}
-      onMouseLeave={() => setOpen(false)}
-    >
-      {/* Toggle header — hover anywhere on the card to expand */}
-      <button
-        onClick={() => setOpen((v) => !v)}
+    <Card delay={delay} style={{ padding: 0, overflow: 'hidden' }}>
+      {/* Header row — click the icon to toggle */}
+      <div
         style={{
           display: 'flex', alignItems: 'center', gap: 16,
-          padding: '20px 22px', width: '100%', textAlign: 'left',
+          padding: '20px 22px',
           background: open ? 'var(--bg)' : 'transparent',
           borderRadius: open ? 'var(--radius-lg) var(--radius-lg) 0 0' : 'var(--radius-lg)',
           transition: 'background 200ms ease',
         }}
       >
-        {/* Animated avatar cluster */}
-        <LeadAvatarCluster open={open} />
+        {/* Animated avatar cluster — click to toggle */}
+        <LeadAvatarCluster open={open} onClick={() => setOpen((v) => !v)} />
 
         {/* Title + meta */}
         <div style={{ flex: 1, minWidth: 0 }}>
@@ -70,7 +64,7 @@ function LeadsCard({ delay = 0 }) {
             transform: open ? 'rotate(90deg)' : 'rotate(0deg)',
           }}/>
         </div>
-      </button>
+      </div>
 
       {/* Expandable content */}
       <div style={{
@@ -138,13 +132,18 @@ function LeadsCard({ delay = 0 }) {
   );
 }
 
-// Overlapping avatar circles for the collapsed header
-function LeadAvatarCluster({ open }) {
+// Overlapping avatar circles — clickable toggle
+function LeadAvatarCluster({ open, onClick }) {
   const [hov, setHov] = useState(false);
   const active = open || hov;
   return (
-    <div
-      style={{ position: 'relative', width: 56, height: 56, flexShrink: 0 }}
+    <button
+      onClick={onClick}
+      aria-label={open ? 'Collapse leads' : 'Expand leads'}
+      style={{
+        position: 'relative', width: 56, height: 56, flexShrink: 0,
+        padding: 0, background: 'transparent', border: 'none', cursor: 'pointer',
+      }}
       onMouseEnter={() => setHov(true)}
       onMouseLeave={() => setHov(false)}
     >
@@ -188,7 +187,7 @@ function LeadAvatarCluster({ open }) {
           </div>
         );
       })}
-    </div>
+    </button>
   );
 }
 

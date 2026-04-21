@@ -4,25 +4,19 @@ function DocumentsCard({ delay = 0 }) {
   const [hoveredRow, setHoveredRow] = useState(null);
 
   return (
-    <Card
-      delay={delay}
-      style={{ padding: 0, overflow: 'hidden' }}
-      onMouseEnter={() => setOpen(true)}
-      onMouseLeave={() => setOpen(false)}
-    >
-      {/* Toggle header — hover anywhere on the card to expand */}
-      <button
-        onClick={() => setOpen((v) => !v)}
+    <Card delay={delay} style={{ padding: 0, overflow: 'hidden' }}>
+      {/* Header row — click the icon to toggle */}
+      <div
         style={{
           display: 'flex', alignItems: 'center', gap: 16,
-          padding: '20px 22px', width: '100%', textAlign: 'left',
+          padding: '20px 22px',
           background: open ? 'var(--bg)' : 'transparent',
           borderRadius: open ? 'var(--radius-lg) var(--radius-lg) 0 0' : 'var(--radius-lg)',
           transition: 'background 200ms ease',
         }}
       >
-        {/* Animated stacked document thumbnails */}
-        <DocIconStack open={open} />
+        {/* Animated stacked document thumbnails — click to toggle */}
+        <DocIconStack open={open} onClick={() => setOpen((v) => !v)} />
 
         {/* Title + meta */}
         <div style={{ flex: 1, minWidth: 0 }}>
@@ -72,7 +66,7 @@ function DocumentsCard({ delay = 0 }) {
             }}/>
           </div>
         </div>
-      </button>
+      </div>
 
       {/* Expandable content */}
       <div style={{
@@ -139,13 +133,18 @@ function DocumentsCard({ delay = 0 }) {
   );
 }
 
-// Decorative stacked miniature document icons
-function DocIconStack({ open }) {
+// Decorative stacked miniature document icons — clickable toggle
+function DocIconStack({ open, onClick }) {
   const [hov, setHov] = useState(false);
   const active = open || hov;
   return (
-    <div
-      style={{ position: 'relative', width: 56, height: 56, flexShrink: 0 }}
+    <button
+      onClick={onClick}
+      aria-label={open ? 'Collapse documents' : 'Expand documents'}
+      style={{
+        position: 'relative', width: 56, height: 56, flexShrink: 0,
+        padding: 0, background: 'transparent', border: 'none', cursor: 'pointer',
+      }}
       onMouseEnter={() => setHov(true)}
       onMouseLeave={() => setHov(false)}
     >
@@ -194,7 +193,7 @@ function DocIconStack({ open }) {
           </div>
         );
       })}
-    </div>
+    </button>
   );
 }
 
