@@ -26,18 +26,20 @@ function LeadsCard({ delay = 0 }) {
       onMouseEnter={() => setCardHov(true)}
       onMouseLeave={() => setCardHov(false)}
     >
-      {/* Header row — click the icon to toggle */}
-      <div
+      {/* Header — click anywhere on this row to toggle */}
+      <button
+        onClick={() => setOpen((v) => !v)}
         style={{
           display: 'flex', alignItems: 'center', gap: 16,
-          padding: '20px 22px',
+          padding: '20px 22px', width: '100%', textAlign: 'left',
           background: active ? 'var(--bg)' : 'transparent',
           borderRadius: open ? 'var(--radius-lg) var(--radius-lg) 0 0' : 'var(--radius-lg)',
           transition: 'background 220ms ease',
+          cursor: 'pointer',
         }}
       >
-        {/* Animated avatar cluster — animates on card hover, click to toggle */}
-        <LeadAvatarCluster active={active} onClick={() => setOpen((v) => !v)} />
+        {/* Animated avatar cluster */}
+        <LeadAvatarCluster active={active} />
 
         {/* Title + meta */}
         <div style={{ flex: 1, minWidth: 0 }}>
@@ -75,7 +77,7 @@ function LeadsCard({ delay = 0 }) {
             transform: open ? 'rotate(90deg)' : 'rotate(0deg)',
           }}/>
         </div>
-      </div>
+      </button>
 
       {/* Expandable content */}
       <div style={{
@@ -144,14 +146,11 @@ function LeadsCard({ delay = 0 }) {
 }
 
 // Overlapping avatar circles — animation driven by parent's hover state
-function LeadAvatarCluster({ active, onClick }) {
+function LeadAvatarCluster({ active }) {
   return (
-    <button
-      onClick={onClick}
-      aria-label="Toggle leads"
+    <div
       style={{
         position: 'relative', width: 56, height: 56, flexShrink: 0,
-        padding: 0, background: 'transparent', border: 'none', cursor: 'pointer',
       }}
     >
       {leads.map((l, i) => {
@@ -194,7 +193,7 @@ function LeadAvatarCluster({ active, onClick }) {
           </div>
         );
       })}
-    </button>
+    </div>
   );
 }
 
