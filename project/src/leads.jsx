@@ -1,5 +1,6 @@
-// Leads card — 5 enquiries with interactive stage pills
+// Leads card — collapsed by default, click to expand enquiry list
 function LeadsCard({ delay = 0 }) {
+  const [open, setOpen] = useState(false);
   const [expanded, setExpanded] = useState(null);
   const [filter, setFilter] = useState('all');
 
@@ -13,10 +14,26 @@ function LeadsCard({ delay = 0 }) {
   const hotCount = leads.filter((l) => l.hot).length;
 
   return (
-    <Card delay={delay} style={{ padding: 0 }}>
-      <div style={{ padding: '18px 22px 14px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 12 }}>
-        <div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+    <Card delay={delay} style={{ padding: 0, overflow: 'hidden' }}>
+      {/* Toggle header — always visible */}
+      <button
+        onClick={() => setOpen((v) => !v)}
+        style={{
+          display: 'flex', alignItems: 'center', gap: 16,
+          padding: '20px 22px', width: '100%', textAlign: 'left',
+          background: 'transparent',
+          borderRadius: open ? 'var(--radius-lg) var(--radius-lg) 0 0' : 'var(--radius-lg)',
+          transition: 'background 200ms ease',
+        }}
+        onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--bg)'; }}
+        onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; }}
+      >
+        {/* Animated avatar cluster */}
+        <LeadAvatarCluster open={open} />
+
+        {/* Title + meta */}
+        <div style={{ flex: 1, minWidth: 0 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 5 }}>
             <h3 style={{ margin: 0, fontSize: 16, fontWeight: 700, letterSpacing: '-0.01em' }}>Leads</h3>
             <Chip tone="default">{leads.length}</Chip>
             {hotCount > 0 && (
@@ -25,62 +42,150 @@ function LeadsCard({ delay = 0 }) {
               </Chip>
             )}
           </div>
-          <div style={{ fontSize: 12.5, color: 'var(--ink-3)', marginTop: 3 }}>
-            Enquiries from buyers who've viewed your listing.
-          </div>
+          {open ? (
+            <div style={{ fontSize: 12.5, color: 'var(--ink-3)' }}>
+              Enquiries from buyers who've viewed your listing.
+            </div>
+          ) : (
+            <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+              <span style={{ fontSize: 12.5, color: 'var(--ink-3)' }}>
+                {leads.filter(l => l.stage === 'New').length} new · {property.shareClicks} share clicks this week
+              </span>
+            </div>
+          )}
         </div>
 
+        {/* Chevron */}
         <div style={{
-          display: 'flex', padding: 3, background: 'var(--bg)',
-          borderRadius: 10, border: '1px solid var(--line)',
+          width: 28, height: 28, borderRadius: 9,
+          display: 'grid', placeItems: 'center',
+          background: 'var(--bg-deep)', flexShrink: 0,
         }}>
-          {[{k:'all',l:'All'}, {k:'hot',l:'Hot'}, {k:'new',l:'New'}].map(({k, l}) => (
-            <button key={k} onClick={() => setFilter(k)} style={{
-              padding: '5px 12px', fontSize: 12, fontWeight: 600,
-              borderRadius: 7,
-              background: filter === k ? '#fff' : 'transparent',
-              color: filter === k ? 'var(--ink)' : 'var(--ink-3)',
-              boxShadow: filter === k ? '0 1px 2px rgba(27,26,23,0.08)' : 'none',
-              transition: 'all 200ms',
-            }}>{l}</button>
-          ))}
+          <Icon name="chevron-right" size={14} style={{
+            color: 'var(--ink-3)',
+            transition: 'transform 360ms cubic-bezier(0.34, 1.56, 0.64, 1)',
+            transform: open ? 'rotate(90deg)' : 'rotate(0deg)',
+          }}/>
         </div>
-      </div>
+      </button>
 
-      {/* Lead rows */}
-      <div style={{ padding: '0 10px 16px' }}>
-        {filtered.map((l, i) => (
-          <LeadRow key={l.id} lead={l}
-            delay={delay + 0.3 + i * 0.08}
-            expanded={expanded === l.id}
-            onToggle={() => setExpanded(expanded === l.id ? null : l.id)}
-          />
-        ))}
-      </div>
-
-      {/* Footer summary */}
+      {/* Expandable content */}
       <div style={{
-        padding: '14px 22px',
-        borderTop: '1px solid var(--line)',
-        background: 'var(--bg)',
-        display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-        flexWrap: 'wrap', gap: 12,
-        borderRadius: '0 0 var(--radius-lg) var(--radius-lg)',
+        maxHeight: open ? 1100 : 0,
+        opacity: open ? 1 : 0,
+        overflow: 'hidden',
+        transition: 'max-height 550ms cubic-bezier(0.34, 1.56, 0.64, 1), opacity 320ms ease',
       }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
-          <Sparkline/>
-          <div>
-            <div style={{ fontSize: 12, color: 'var(--ink-3)' }}>Enquiries this week</div>
-            <div style={{ fontSize: 14, fontWeight: 600, letterSpacing: '-0.005em' }}>
-              5 leads · {property.shareClicks} share clicks
+        <div style={{ borderTop: '1px solid var(--line)' }}>
+          {/* Filter pills */}
+          <div style={{ padding: '14px 22px 10px', display: 'flex', justifyContent: 'flex-end' }}>
+            <div style={{
+              display: 'flex', padding: 3, background: 'var(--bg)',
+              borderRadius: 10, border: '1px solid var(--line)',
+            }}>
+              {[{k:'all',l:'All'}, {k:'hot',l:'Hot'}, {k:'new',l:'New'}].map(({k, l}) => (
+                <button key={k} onClick={(e) => { e.stopPropagation(); setFilter(k); }} style={{
+                  padding: '5px 12px', fontSize: 12, fontWeight: 600,
+                  borderRadius: 7,
+                  background: filter === k ? '#fff' : 'transparent',
+                  color: filter === k ? 'var(--ink)' : 'var(--ink-3)',
+                  boxShadow: filter === k ? '0 1px 2px rgba(27,26,23,0.08)' : 'none',
+                  transition: 'all 200ms',
+                }}>{l}</button>
+              ))}
             </div>
           </div>
+
+          {/* Lead rows */}
+          <div style={{ padding: '0 10px 16px' }}>
+            {filtered.map((l, i) => (
+              <LeadRow key={l.id} lead={l}
+                delay={0.05 + i * 0.08}
+                expanded={expanded === l.id}
+                onToggle={() => setExpanded(expanded === l.id ? null : l.id)}
+              />
+            ))}
+          </div>
+
+          {/* Footer summary */}
+          <div style={{
+            padding: '14px 22px',
+            borderTop: '1px solid var(--line)',
+            background: 'var(--bg)',
+            display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+            flexWrap: 'wrap', gap: 12,
+            borderRadius: '0 0 var(--radius-lg) var(--radius-lg)',
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
+              <Sparkline/>
+              <div>
+                <div style={{ fontSize: 12, color: 'var(--ink-3)' }}>Enquiries this week</div>
+                <div style={{ fontSize: 14, fontWeight: 600, letterSpacing: '-0.005em' }}>
+                  5 leads · {property.shareClicks} share clicks
+                </div>
+              </div>
+            </div>
+            <Btn size="sm" variant="dark" icon="sparkles" iconRight="arrow-right">
+              Send follow-up form
+            </Btn>
+          </div>
         </div>
-        <Btn size="sm" variant="dark" icon="sparkles" iconRight="arrow-right">
-          Send follow-up form
-        </Btn>
       </div>
     </Card>
+  );
+}
+
+// Overlapping avatar circles for the collapsed header
+function LeadAvatarCluster({ open }) {
+  const [hov, setHov] = useState(false);
+  const active = open || hov;
+  return (
+    <div
+      style={{ position: 'relative', width: 56, height: 56, flexShrink: 0 }}
+      onMouseEnter={() => setHov(true)}
+      onMouseLeave={() => setHov(false)}
+    >
+      {leads.map((l, i) => {
+        // fan out positions
+        const fanAngles = [-40, -20, 0, 20, 40];
+        const fanRadius = 18;
+        const angle = (fanAngles[i] * Math.PI) / 180;
+        const fx = Math.sin(angle) * fanRadius;
+        const fy = -Math.abs(Math.cos(angle)) * fanRadius * 0.4;
+
+        // stacked positions (slight offset)
+        const sx = (i - 2) * 3;
+        const sy = 0;
+
+        return (
+          <div key={l.id} style={{
+            position: 'absolute',
+            left: '50%', top: '50%',
+            width: 30, height: 30,
+            borderRadius: '50%',
+            background: `linear-gradient(135deg, ${l.accent} 0%, ${l.accent}cc 100%)`,
+            border: '2px solid #fff',
+            boxShadow: active ? `0 6px 14px -4px ${l.accent}55` : '0 1px 2px rgba(27,26,23,0.1)',
+            display: 'grid', placeItems: 'center',
+            color: '#fff', fontSize: 10, fontWeight: 700, letterSpacing: '-0.01em',
+            transition: 'transform 420ms cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 280ms ease',
+            transform: active
+              ? `translate(calc(-50% + ${fx}px), calc(-50% + ${fy}px))`
+              : `translate(calc(-50% + ${sx}px), calc(-50% + ${sy}px))`,
+            zIndex: i + 1,
+          }}>
+            {l.initials}
+            {l.hot && (
+              <div style={{
+                position: 'absolute', top: -2, right: -2,
+                width: 10, height: 10, borderRadius: '50%',
+                background: '#ff5a3c', border: '1.5px solid #fff',
+              }}/>
+            )}
+          </div>
+        );
+      })}
+    </div>
   );
 }
 
@@ -155,7 +260,7 @@ function LeadRow({ lead, delay, expanded, onToggle }) {
         </div>
       </button>
 
-      {/* Expanded */}
+      {/* Expanded detail */}
       <div style={{
         maxHeight: expanded ? 180 : 0,
         opacity: expanded ? 1 : 0,

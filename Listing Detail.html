@@ -1,0 +1,1783 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Listing · 14 Rangitoto Terrace</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f5f1ea;
+    --bg-deep: #ebe5d9;
+    --surface: #ffffff;
+    --ink: #1b1a17;
+    --ink-2: #3a3832;
+    --ink-3: #6b6860;
+    --ink-4: #a29e94;
+    --line: #e4ddd0;
+    --line-2: #d9d1c2;
+    --accent: #2d2bff;
+    --accent-soft: #eeedff;
+    --accent-ink: #1a18cc;
+    --good: #0f7a4d;
+    --good-soft: #dff3e7;
+    --warn: #b4530a;
+    --warn-soft: #fbe8d4;
+    --danger: #b21f2d;
+    --radius: 18px;
+    --radius-lg: 24px;
+    --shadow-sm: 0 1px 0 rgba(27,26,23,0.04), 0 1px 2px rgba(27,26,23,0.04);
+    --shadow-md: 0 1px 0 rgba(27,26,23,0.04), 0 8px 24px -12px rgba(27,26,23,0.14);
+    --shadow-lg: 0 1px 0 rgba(27,26,23,0.04), 0 24px 60px -24px rgba(27,26,23,0.22);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: 'ss01', 'cv11';
+  }
+  .serif { font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; letter-spacing: -0.01em; }
+  .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+  button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+  a { color: inherit; text-decoration: none; }
+
+  /* scrollbar */
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-thumb { background: #d4cdbd; border-radius: 10px; border: 2px solid var(--bg); }
+  ::-webkit-scrollbar-track { background: transparent; }
+
+  /* shared motion */
+  @keyframes floatIn {
+    0% { opacity: 0; transform: translateY(16px) scale(0.985); }
+    60% { opacity: 1; transform: translateY(-3px) scale(1.005); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  @keyframes popIn {
+    0% { opacity: 0; transform: scale(0.6) rotate(-6deg); }
+    60% { opacity: 1; transform: scale(1.1) rotate(2deg); }
+    100% { opacity: 1; transform: scale(1) rotate(0); }
+  }
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+  @keyframes pulseDot {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.4); opacity: 0.7; }
+  }
+
+  .enter { animation: floatIn 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) both; }
+</style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="application/json" id="tweak-defaults">
+  /*EDITMODE-BEGIN*/{
+    "motion": "lively",
+    "accent": "indigo",
+    "density": "comfortable",
+    "hoverTilt": true
+  }/*EDITMODE-END*/
+  </script>
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>  <script type="text/babel" data-type="module" data-presets="react">
+// Fake property data
+const property = {
+  id: 3,
+  title: "14 Rangitoto Terrace",
+  suburb: "Mission Bay",
+  city: "Auckland",
+  status: "Active",
+  listedDays: 4,
+  subtitle: "Coastal family home with sweeping harbour views",
+  price: "$2,450,000",
+  priceNote: "Enquiries over $2.3M",
+  beds: 4,
+  baths: 3,
+  floor: 228,
+  land: 612,
+  garage: 2,
+  year: 2018,
+  description:
+    "A sun-drenched four bedroom home set across two levels, just a short walk from Mission Bay beach and the village. Open-plan living flows to a north-facing deck, and the upper level opens to a generous balcony with harbour views.",
+  shareUrl: "formz.app/p/d8ksv-rangitoto",
+  views: 1247,
+  shareClicks: 83,
+};
+
+const photos = [
+  { id: 1, tone: "#c8bfa7", label: "Exterior · Front", hue: 40 },
+  { id: 2, tone: "#a4b1a8", label: "Living · Open plan", hue: 140 },
+  { id: 3, tone: "#c9b2a4", label: "Kitchen", hue: 20 },
+  { id: 4, tone: "#adb5c5", label: "Master bedroom", hue: 220 },
+  { id: 5, tone: "#b8a6b0", label: "Bathroom", hue: 320 },
+  { id: 6, tone: "#b0b9a4", label: "Deck · North", hue: 100 },
+  { id: 7, tone: "#a9b6c0", label: "Harbour view", hue: 200 },
+  { id: 8, tone: "#c4b094", label: "Garden", hue: 60 },
+];
+
+const documents = [
+  {
+    id: 1,
+    type: "LIM Report",
+    label: "LIM Report 2026",
+    size: "2.4 MB",
+    pages: 38,
+    uploaded: "3 days ago",
+    downloads: 12,
+    tone: "#2d2bff",
+  },
+  {
+    id: 2,
+    type: "Title",
+    label: "Record of Title — NA124B/556",
+    size: "412 KB",
+    pages: 4,
+    uploaded: "1 week ago",
+    downloads: 18,
+    tone: "#0f7a4d",
+  },
+  {
+    id: 3,
+    type: "Builders Report",
+    label: "Pre-purchase inspection",
+    size: "6.1 MB",
+    pages: 52,
+    uploaded: "1 week ago",
+    downloads: 7,
+    tone: "#b4530a",
+  },
+];
+
+const leads = [
+  {
+    id: 1,
+    name: "Priya Ramesh",
+    initials: "PR",
+    email: "priya.r@gmail.com",
+    phone: "021 445 918",
+    message: "Interested in a private viewing — weekday evenings work best.",
+    when: "12 min ago",
+    stage: "New",
+    hot: true,
+    accent: "#2d2bff",
+  },
+  {
+    id: 2,
+    name: "Tama Wilson",
+    initials: "TW",
+    email: "tama.wilson@outlook.com",
+    phone: "027 221 334",
+    message: "Requesting LIM and builders report. Pre-approved to $2.6M.",
+    when: "2 hours ago",
+    stage: "Qualified",
+    hot: true,
+    accent: "#0f7a4d",
+  },
+  {
+    id: 3,
+    name: "Hannah Ogilvie",
+    initials: "HO",
+    email: "h.ogilvie@xtra.co.nz",
+    phone: "021 091 772",
+    message: "Second viewing last Sunday — talking to partner this week.",
+    when: "Yesterday",
+    stage: "Following up",
+    hot: false,
+    accent: "#b4530a",
+  },
+  {
+    id: 4,
+    name: "David Chen",
+    initials: "DC",
+    email: "dchen@proton.me",
+    phone: "022 880 441",
+    message: "Asked about school zoning and whether pets are allowed.",
+    when: "2 days ago",
+    stage: "New",
+    hot: false,
+    accent: "#6b6860",
+  },
+  {
+    id: 5,
+    name: "Rebecca Hall",
+    initials: "RH",
+    email: "becca.hall@me.com",
+    phone: "021 557 009",
+    message: "Not proceeding — budget came in under. Thanks for the reply.",
+    when: "4 days ago",
+    stage: "Closed",
+    hot: false,
+    accent: "#a29e94",
+  },
+];
+
+Object.assign(window, { property, photos, documents, leads });
+
+  </script>
+  <script type="text/babel" data-type="module" data-presets="react">
+// Lightweight inline SVG icon set
+const Icon = ({ name, size = 16, stroke = 1.75, style }) => {
+  const s = { width: size, height: size, display: 'inline-block', verticalAlign: '-2px', ...style };
+  const common = {
+    width: size, height: size, viewBox: '0 0 24 24', fill: 'none',
+    stroke: 'currentColor', strokeWidth: stroke, strokeLinecap: 'round', strokeLinejoin: 'round',
+    style: s,
+  };
+  switch (name) {
+    case 'home': return <svg {...common}><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg>;
+    case 'grid': return <svg {...common}><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>;
+    case 'users': return <svg {...common}><circle cx="9" cy="8" r="3.2"/><path d="M2.5 20c.6-3.4 3.3-5.5 6.5-5.5s5.9 2.1 6.5 5.5"/><circle cx="17" cy="9" r="2.6"/><path d="M16 14.2c2.7.1 4.9 1.8 5.5 4.8"/></svg>;
+    case 'list': return <svg {...common}><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h10M7 13h10M7 17h6"/></svg>;
+    case 'send': return <svg {...common}><path d="M22 3L11 14"/><path d="M22 3l-7 18-4-7-7-4 18-7z"/></svg>;
+    case 'inbox': return <svg {...common}><path d="M3 13l2.5-7A2 2 0 0 1 7.4 5h9.2a2 2 0 0 1 1.9 1L21 13"/><path d="M3 13h5l1 3h6l1-3h5v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-6z"/></svg>;
+    case 'cog': return <svg {...common}><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9c.37.15.68.4.91.72"/></svg>;
+    case 'shield': return <svg {...common}><path d="M12 3l8 3v5c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6l8-3z"/></svg>;
+    case 'bed': return <svg {...common}><path d="M3 17V7"/><path d="M3 11h14a4 4 0 0 1 4 4v2"/><path d="M3 17h18"/><circle cx="7.5" cy="11" r="2"/></svg>;
+    case 'bath': return <svg {...common}><path d="M3 11h18v4a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4v-4z"/><path d="M7 11V6a2 2 0 0 1 2-2h1l-.5 2"/><path d="M5 19l-1 2M19 19l1 2"/></svg>;
+    case 'ruler': return <svg {...common}><path d="M3 17L17 3l4 4L7 21z"/><path d="M7 13l2 2M11 9l2 2M15 5l2 2"/></svg>;
+    case 'tree': return <svg {...common}><path d="M12 21v-6"/><path d="M8 15a4 4 0 0 1-1-7.7A5 5 0 0 1 17 7a4 4 0 0 1-1 7.7"/></svg>;
+    case 'car': return <svg {...common}><path d="M5 17h14"/><path d="M6 17l-1-5 2-4h10l2 4-1 5"/><circle cx="8" cy="17" r="2"/><circle cx="16" cy="17" r="2"/></svg>;
+    case 'calendar': return <svg {...common}><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>;
+    case 'doc': return <svg {...common}><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/></svg>;
+    case 'download': return <svg {...common}><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 21h16"/></svg>;
+    case 'plus': return <svg {...common}><path d="M12 5v14M5 12h14"/></svg>;
+    case 'copy': return <svg {...common}><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg>;
+    case 'eye': return <svg {...common}><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>;
+    case 'qr': return <svg {...common}><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h3v3M21 14v3M14 21h7M17 17v4"/></svg>;
+    case 'arrow-left': return <svg {...common}><path d="M19 12H5M12 5l-7 7 7 7"/></svg>;
+    case 'arrow-right': return <svg {...common}><path d="M5 12h14M12 5l7 7-7 7"/></svg>;
+    case 'mail': return <svg {...common}><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>;
+    case 'phone': return <svg {...common}><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg>;
+    case 'flame': return <svg {...common}><path d="M12 21c-4 0-7-3-7-7 0-3 2-5 3-7 1 2 2 3 4 3 0-3 1-5 3-7 0 2 1 3 2 5 1 1 2 3 2 6 0 4-3 7-7 7z"/></svg>;
+    case 'check': return <svg {...common}><path d="M5 13l4 4L19 7"/></svg>;
+    case 'sparkles': return <svg {...common}><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5z"/><path d="M19 15l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7z"/></svg>;
+    case 'chevron-right': return <svg {...common}><path d="M9 6l6 6-6 6"/></svg>;
+    case 'more': return <svg {...common}><circle cx="6" cy="12" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="18" cy="12" r="1.5"/></svg>;
+    case 'edit': return <svg {...common}><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>;
+    case 'trash': return <svg {...common}><path d="M4 7h16"/><path d="M10 11v6M14 11v6"/><path d="M6 7l1 13a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2l1-13"/><path d="M9 7V4h6v3"/></svg>;
+    case 'share': return <svg {...common}><path d="M4 12v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7"/><path d="M16 6l-4-4-4 4M12 2v14"/></svg>;
+    case 'zap': return <svg {...common}><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>;
+    case 'logout': return <svg {...common}><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5M21 12H9"/></svg>;
+    case 'bell': return <svg {...common}><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10 21a2 2 0 0 0 4 0"/></svg>;
+    case 'trend': return <svg {...common}><path d="M3 17l6-6 4 4 7-8"/><path d="M14 7h6v6"/></svg>;
+    default: return <svg {...common}></svg>;
+  }
+};
+
+window.Icon = Icon;
+
+  </script>
+  <script type="text/babel" data-type="module" data-presets="react">
+// Shared primitives: Card wrapper with springy entrance + hover tilt
+const { useEffect, useRef, useState, useMemo, useLayoutEffect } = React;
+
+function useSpringyTilt(enabled = true) {
+  const ref = useRef(null);
+  useEffect(() => {
+    if (!enabled) return;
+    const el = ref.current;
+    if (!el) return;
+    let raf = 0;
+    const onMove = (e) => {
+      const r = el.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width - 0.5;
+      const y = (e.clientY - r.top) / r.height - 0.5;
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        el.style.transform = `perspective(900px) rotateX(${-y * 2.2}deg) rotateY(${x * 2.2}deg) translateY(-2px)`;
+      });
+    };
+    const onLeave = () => {
+      cancelAnimationFrame(raf);
+      el.style.transform = '';
+    };
+    el.addEventListener('mousemove', onMove);
+    el.addEventListener('mouseleave', onLeave);
+    return () => {
+      el.removeEventListener('mousemove', onMove);
+      el.removeEventListener('mouseleave', onLeave);
+      cancelAnimationFrame(raf);
+    };
+  }, [enabled]);
+  return ref;
+}
+
+function Card({ children, delay = 0, className = '', style = {}, tilt = false, onClick, ...rest }) {
+  const tiltRef = useSpringyTilt(tilt);
+  return (
+    <div
+      ref={tiltRef}
+      onClick={onClick}
+      className={`card ${className}`}
+      style={{
+        background: 'var(--surface)',
+        borderRadius: 'var(--radius-lg)',
+        boxShadow: 'var(--shadow-md)',
+        border: '1px solid var(--line)',
+        animation: `floatIn 0.8s ${delay}s cubic-bezier(0.34, 1.56, 0.64, 1) both`,
+        willChange: 'transform',
+        transition: 'transform 300ms cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 260ms ease',
+        ...style,
+      }}
+      {...rest}
+    >
+      {children}
+    </div>
+  );
+}
+
+function Chip({ children, tone = 'default', size = 'sm', style = {}, ...rest }) {
+  const tones = {
+    default: { bg: '#f0ece2', fg: '#3a3832', border: '#e4ddd0' },
+    good: { bg: 'var(--good-soft)', fg: 'var(--good)', border: '#b9e2c9' },
+    accent: { bg: 'var(--accent-soft)', fg: 'var(--accent-ink)', border: '#d4d2ff' },
+    warn: { bg: 'var(--warn-soft)', fg: 'var(--warn)', border: '#f1d1a8' },
+    ink: { bg: 'var(--ink)', fg: '#fff', border: 'var(--ink)' },
+    muted: { bg: 'transparent', fg: 'var(--ink-3)', border: 'var(--line-2)' },
+    hot: { bg: '#ffe9e4', fg: '#c6361d', border: '#f5c8bd' },
+  };
+  const t = tones[tone] || tones.default;
+  const pad = size === 'lg' ? '6px 12px' : '3px 9px';
+  const fs = size === 'lg' ? 13 : 11;
+  return (
+    <span style={{
+      display: 'inline-flex', alignItems: 'center', gap: 5,
+      padding: pad, borderRadius: 999,
+      background: t.bg, color: t.fg, border: `1px solid ${t.border}`,
+      fontSize: fs, fontWeight: 600, letterSpacing: '-0.005em',
+      ...style,
+    }} {...rest}>{children}</span>
+  );
+}
+
+function Btn({ children, variant = 'default', size = 'md', icon, iconRight, style = {}, ...rest }) {
+  const pads = { sm: '6px 10px', md: '9px 14px', lg: '12px 18px' };
+  const fs = { sm: 12.5, md: 13.5, lg: 14 };
+  const variants = {
+    default: { bg: '#fff', fg: 'var(--ink)', border: 'var(--line-2)', hoverBg: '#faf7f1' },
+    accent: { bg: 'var(--accent)', fg: '#fff', border: 'var(--accent)', hoverBg: 'var(--accent-ink)' },
+    ghost: { bg: 'transparent', fg: 'var(--ink-2)', border: 'transparent', hoverBg: 'var(--bg-deep)' },
+    danger: { bg: '#fff', fg: 'var(--danger)', border: '#f1c5c9', hoverBg: '#fdf2f3' },
+    dark: { bg: 'var(--ink)', fg: '#fff', border: 'var(--ink)', hoverBg: '#000' },
+  };
+  const v = variants[variant] || variants.default;
+  const [hov, setHov] = useState(false);
+  return (
+    <button
+      onMouseEnter={() => setHov(true)}
+      onMouseLeave={() => setHov(false)}
+      style={{
+        display: 'inline-flex', alignItems: 'center', gap: 7,
+        padding: pads[size], fontSize: fs[size], fontWeight: 600,
+        borderRadius: 10, border: `1px solid ${v.border}`,
+        background: hov ? v.hoverBg : v.bg, color: v.fg,
+        boxShadow: variant === 'accent' || variant === 'dark' ? '0 1px 0 rgba(0,0,0,0.15), 0 4px 12px -4px rgba(45,43,255,0.3)' : '0 1px 0 rgba(27,26,23,0.04)',
+        transition: 'all 200ms cubic-bezier(0.34, 1.56, 0.64, 1)',
+        transform: hov ? 'translateY(-1px) scale(1.02)' : 'translateY(0)',
+        letterSpacing: '-0.005em',
+        ...style,
+      }}
+      {...rest}
+    >
+      {icon && <Icon name={icon} size={fs[size]} />}
+      {children}
+      {iconRight && <Icon name={iconRight} size={fs[size]} />}
+    </button>
+  );
+}
+
+function AnimatedNumber({ value, duration = 900, format = (v) => v, suffix = '' }) {
+  const [display, setDisplay] = useState(0);
+  useEffect(() => {
+    let raf; const start = performance.now(); const from = 0; const to = value;
+    const tick = (now) => {
+      const t = Math.min(1, (now - start) / duration);
+      // ease out back-ish
+      const e = 1 - Math.pow(1 - t, 3);
+      setDisplay(from + (to - from) * e);
+      if (t < 1) raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, [value, duration]);
+  return <span>{format(display)}{suffix}</span>;
+}
+
+Object.assign(window, { Card, Chip, Btn, AnimatedNumber, useSpringyTilt });
+
+  </script>
+  <script type="text/babel" data-type="module" data-presets="react">
+// Redesigned sidebar — warm ink tone, subtle accent, smooth active pill
+function Sidebar() {
+  const nav = [
+    { icon: 'grid', label: 'Dashboard' },
+    { icon: 'users', label: 'Clients', count: 12 },
+    { icon: 'home', label: 'Listings', count: 8, active: true },
+    { icon: 'send', label: 'Forms Sent' },
+    { icon: 'inbox', label: 'Submissions', count: 3 },
+    { icon: 'trend', label: 'Analytics' },
+  ];
+  const bottom = [
+    { icon: 'cog', label: 'Settings' },
+    { icon: 'shield', label: 'Admin' },
+  ];
+
+  return (
+    <aside style={{
+      width: 232, flexShrink: 0,
+      background: 'var(--surface)',
+      borderRight: '1px solid var(--line)',
+      display: 'flex', flexDirection: 'column',
+      padding: '22px 14px',
+      height: '100vh',
+      position: 'sticky', top: 0,
+    }}>
+      {/* Logo */}
+      <div style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '4px 8px 22px' }}>
+        <div style={{
+          width: 32, height: 32, borderRadius: 9,
+          background: 'var(--ink)', color: '#fff',
+          display: 'grid', placeItems: 'center',
+          fontFamily: "'Instrument Serif', serif", fontSize: 22, fontStyle: 'italic',
+          fontWeight: 400, letterSpacing: '-0.02em',
+          boxShadow: '0 2px 0 rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.08)',
+        }}>f</div>
+        <div>
+          <div style={{ fontSize: 16, fontWeight: 700, letterSpacing: '-0.015em' }}>Formz</div>
+          <div style={{ fontSize: 10.5, color: 'var(--ink-4)', fontWeight: 500, letterSpacing: '0.06em', textTransform: 'uppercase' }}>Agent workspace</div>
+        </div>
+      </div>
+
+      {/* Search */}
+      <div style={{
+        display: 'flex', alignItems: 'center', gap: 8,
+        padding: '9px 12px',
+        background: 'var(--bg)', borderRadius: 10,
+        border: '1px solid var(--line)',
+        marginBottom: 18,
+      }}>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--ink-4)" strokeWidth="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3-3"/></svg>
+        <span style={{ fontSize: 13, color: 'var(--ink-4)', flex: 1 }}>Quick jump</span>
+        <span style={{ fontSize: 10.5, color: 'var(--ink-4)', fontFamily: 'JetBrains Mono, monospace', background: '#fff', padding: '1px 5px', borderRadius: 4, border: '1px solid var(--line)' }}>⌘K</span>
+      </div>
+
+      {/* Primary nav */}
+      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 2 }}>
+        <div style={{ fontSize: 10.5, color: 'var(--ink-4)', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', padding: '6px 10px 8px' }}>Workspace</div>
+        {nav.map((n) => <NavItem key={n.label} {...n} />)}
+
+        <div style={{ fontSize: 10.5, color: 'var(--ink-4)', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', padding: '20px 10px 8px' }}>Account</div>
+        {bottom.map((n) => <NavItem key={n.label} {...n} />)}
+      </div>
+
+      {/* Usage card */}
+      <div style={{
+        margin: '8px 4px 12px',
+        padding: '12px 13px',
+        background: 'linear-gradient(135deg, #1a18cc 0%, #2d2bff 100%)',
+        borderRadius: 14, color: '#fff',
+        position: 'relative', overflow: 'hidden',
+      }}>
+        <div style={{
+          position: 'absolute', right: -20, top: -20, width: 80, height: 80,
+          borderRadius: '50%', background: 'rgba(255,255,255,0.1)',
+        }} />
+        <div style={{ fontSize: 11, opacity: 0.75, fontWeight: 500, letterSpacing: '0.04em', textTransform: 'uppercase', marginBottom: 4 }}>This month</div>
+        <div style={{ fontFamily: "'Instrument Serif', serif", fontSize: 28, lineHeight: 1, marginBottom: 8 }}>4<span style={{ opacity: 0.6, fontSize: 20 }}>/10</span></div>
+        <div style={{ height: 4, background: 'rgba(255,255,255,0.2)', borderRadius: 10, overflow: 'hidden' }}>
+          <div style={{ width: '40%', height: '100%', background: '#fff', borderRadius: 10 }} />
+        </div>
+        <div style={{ fontSize: 11, opacity: 0.8, marginTop: 8 }}>listings used · upgrade</div>
+      </div>
+
+      {/* User */}
+      <div style={{
+        display: 'flex', alignItems: 'center', gap: 10,
+        padding: '10px 8px',
+        borderTop: '1px solid var(--line)',
+      }}>
+        <div style={{
+          width: 34, height: 34, borderRadius: '50%',
+          background: 'linear-gradient(135deg, #2d2bff, #7a79ff)',
+          display: 'grid', placeItems: 'center', color: '#fff',
+          fontWeight: 600, fontSize: 13,
+          boxShadow: '0 2px 6px rgba(45,43,255,0.3)',
+        }}>JM</div>
+        <div style={{ flex: 1, minWidth: 0 }}>
+          <div style={{ fontSize: 13, fontWeight: 600, letterSpacing: '-0.005em' }}>John Mitchell</div>
+          <div style={{ fontSize: 11, color: 'var(--ink-4)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>agent@homestoneuniversity</div>
+        </div>
+        <button style={{ padding: 6, borderRadius: 8, color: 'var(--ink-4)' }} title="Sign out">
+          <Icon name="logout" size={16}/>
+        </button>
+      </div>
+    </aside>
+  );
+}
+
+function NavItem({ icon, label, count, active }) {
+  const [hov, setHov] = useState(false);
+  return (
+    <button
+      onMouseEnter={() => setHov(true)}
+      onMouseLeave={() => setHov(false)}
+      style={{
+        display: 'flex', alignItems: 'center', gap: 10,
+        padding: '9px 10px',
+        borderRadius: 10,
+        width: '100%', textAlign: 'left',
+        background: active ? 'var(--ink)' : (hov ? 'var(--bg-deep)' : 'transparent'),
+        color: active ? '#fff' : 'var(--ink-2)',
+        fontSize: 13.5, fontWeight: active ? 600 : 500,
+        letterSpacing: '-0.005em',
+        transition: 'background 180ms ease, transform 200ms cubic-bezier(0.34, 1.56, 0.64, 1)',
+        transform: hov && !active ? 'translateX(2px)' : 'translateX(0)',
+        position: 'relative',
+        boxShadow: active ? '0 4px 12px -4px rgba(27,26,23,0.35)' : 'none',
+      }}
+    >
+      <Icon name={icon} size={16} />
+      <span style={{ flex: 1 }}>{label}</span>
+      {count !== undefined && (
+        <span style={{
+          fontSize: 11, fontWeight: 600,
+          padding: '1px 7px', borderRadius: 999,
+          background: active ? 'rgba(255,255,255,0.15)' : 'var(--bg-deep)',
+          color: active ? '#fff' : 'var(--ink-3)',
+          fontVariantNumeric: 'tabular-nums',
+        }}>{count}</span>
+      )}
+    </button>
+  );
+}
+
+window.Sidebar = Sidebar;
+
+  </script>
+  <script type="text/babel" data-type="module" data-presets="react">
+// Hero banner + interactive photo gallery card
+function Hero({ delay = 0 }) {
+  const [active, setActive] = useState(0);
+  const [expanded, setExpanded] = useState(false);
+
+  const current = photos[active];
+
+  return (
+    <Card delay={delay} style={{ padding: 0, overflow: 'hidden' }}>
+      {/* Banner */}
+      <div style={{
+        position: 'relative',
+        height: 320,
+        background: `linear-gradient(135deg, ${current.tone} 0%, ${shift(current.tone, 30)} 100%)`,
+        transition: 'background 700ms cubic-bezier(0.34, 1.56, 0.64, 1)',
+        overflow: 'hidden',
+      }}>
+        {/* Decorative shapes to simulate a photo */}
+        <PhotoScene hue={current.hue} />
+
+        {/* Top overlay: back + actions */}
+        <div style={{
+          position: 'absolute', top: 0, left: 0, right: 0,
+          padding: 18, display: 'flex', justifyContent: 'space-between',
+          background: 'linear-gradient(180deg, rgba(27,26,23,0.28) 0%, transparent 100%)',
+        }}>
+          <button style={{
+            display: 'inline-flex', alignItems: 'center', gap: 6,
+            padding: '6px 12px', borderRadius: 999,
+            background: 'rgba(255,255,255,0.92)', backdropFilter: 'blur(6px)',
+            fontSize: 12.5, fontWeight: 600, color: 'var(--ink)',
+          }}>
+            <Icon name="arrow-left" size={13}/> All listings
+          </button>
+          <div style={{ display: 'flex', gap: 6 }}>
+            <IconPill><Icon name="share" size={14}/></IconPill>
+            <IconPill><Icon name="more" size={14}/></IconPill>
+          </div>
+        </div>
+
+        {/* Bottom overlay: title + status + meta */}
+        <div style={{
+          position: 'absolute', bottom: 0, left: 0, right: 0,
+          padding: '28px 28px 24px',
+          background: 'linear-gradient(0deg, rgba(27,26,23,0.68) 0%, transparent 100%)',
+          color: '#fff',
+        }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 8 }}>
+            <span style={{
+              display: 'inline-flex', alignItems: 'center', gap: 5,
+              padding: '3px 9px', borderRadius: 999,
+              background: 'rgba(15,122,77,0.95)', color: '#fff',
+              fontSize: 11, fontWeight: 600, letterSpacing: '-0.005em',
+            }}>
+              <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#b1f0c9', animation: 'pulseDot 1.6s infinite' }} />
+              {property.status}
+            </span>
+            <span style={{ fontSize: 12, opacity: 0.9 }}>Listed {property.listedDays} days ago · {property.views.toLocaleString()} views</span>
+          </div>
+          <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', gap: 20, flexWrap: 'wrap' }}>
+            <div>
+              <h1 className="serif" style={{ margin: 0, fontSize: 46, lineHeight: 1.02, letterSpacing: '-0.02em' }}>
+                {property.title}
+              </h1>
+              <div style={{ fontSize: 14.5, opacity: 0.92, marginTop: 6, fontWeight: 500 }}>
+                {property.suburb}, {property.city} · {property.subtitle}
+              </div>
+            </div>
+            <div style={{ display: 'flex', gap: 8 }}>
+              <Btn icon="edit" size="md" variant="default">Edit</Btn>
+              <Btn icon="eye" size="md" variant="dark">Preview</Btn>
+            </div>
+          </div>
+        </div>
+
+        {/* Photo indicators */}
+        <div style={{
+          position: 'absolute', top: 20, right: 90,
+          display: 'flex', gap: 4,
+        }}>
+          {photos.slice(0, 4).map((_, i) => (
+            <div key={i} style={{
+              height: 3, width: i === active ? 22 : 10,
+              borderRadius: 3,
+              background: i === active ? '#fff' : 'rgba(255,255,255,0.5)',
+              transition: 'width 320ms cubic-bezier(0.34, 1.56, 0.64, 1)',
+            }}/>
+          ))}
+        </div>
+      </div>
+
+      {/* Thumbnail strip / gallery */}
+      <div style={{ padding: '18px 22px 20px', borderTop: '1px solid var(--line)' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 12 }}>
+          <div style={{ display: 'flex', alignItems: 'baseline', gap: 10 }}>
+            <span style={{ fontSize: 13, fontWeight: 600, letterSpacing: '-0.005em' }}>Gallery</span>
+            <span style={{ fontSize: 12, color: 'var(--ink-4)' }}>{active + 1} / {photos.length} · {current.label}</span>
+          </div>
+          <div style={{ display: 'flex', gap: 6 }}>
+            <Btn icon="plus" size="sm" variant="ghost">Upload photo</Btn>
+            <Btn size="sm" variant="ghost" onClick={() => setExpanded(!expanded)}>
+              {expanded ? 'Collapse' : 'View all'}
+            </Btn>
+          </div>
+        </div>
+
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: expanded ? 'repeat(8, 1fr)' : 'repeat(auto-fit, minmax(110px, 1fr))',
+          gap: 10,
+          transition: 'all 400ms ease',
+        }}>
+          {photos.map((p, i) => (
+            <Thumb key={p.id} photo={p} active={i === active} onClick={() => setActive(i)} delay={i * 0.04} />
+          ))}
+          <button style={{
+            aspectRatio: '4/3', borderRadius: 12,
+            border: '2px dashed var(--line-2)',
+            background: 'var(--bg)',
+            display: 'grid', placeItems: 'center',
+            color: 'var(--ink-4)', fontSize: 11, fontWeight: 600,
+            transition: 'all 200ms',
+          }}
+          onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--accent)'; e.currentTarget.style.color = 'var(--accent)'; }}
+          onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--line-2)'; e.currentTarget.style.color = 'var(--ink-4)'; }}
+          >
+            <div style={{ textAlign: 'center' }}>
+              <Icon name="plus" size={18}/>
+              <div style={{ marginTop: 2 }}>Add</div>
+            </div>
+          </button>
+        </div>
+      </div>
+    </Card>
+  );
+}
+
+function Thumb({ photo, active, onClick, delay }) {
+  const [hov, setHov] = useState(false);
+  return (
+    <button
+      onClick={onClick}
+      onMouseEnter={() => setHov(true)}
+      onMouseLeave={() => setHov(false)}
+      style={{
+        position: 'relative',
+        aspectRatio: '4/3', borderRadius: 12,
+        background: `linear-gradient(135deg, ${photo.tone} 0%, ${shift(photo.tone, 30)} 100%)`,
+        border: active ? '2px solid var(--accent)' : '2px solid transparent',
+        outline: active ? '3px solid var(--accent-soft)' : 'none',
+        padding: 0, overflow: 'hidden',
+        transition: 'transform 300ms cubic-bezier(0.34, 1.56, 0.64, 1), outline 200ms',
+        transform: hov ? 'translateY(-3px) scale(1.03) rotate(-0.4deg)' : 'translateY(0)',
+        boxShadow: hov ? '0 12px 22px -10px rgba(27,26,23,0.35)' : '0 1px 2px rgba(27,26,23,0.06)',
+        animation: `floatIn 0.6s ${delay}s cubic-bezier(0.34, 1.56, 0.64, 1) both`,
+        cursor: 'pointer',
+      }}
+    >
+      <PhotoScene hue={photo.hue} compact />
+      <div style={{
+        position: 'absolute', bottom: 6, left: 6, right: 6,
+        fontSize: 9.5, fontWeight: 600, color: '#fff',
+        textShadow: '0 1px 2px rgba(0,0,0,0.5)',
+        textAlign: 'left', letterSpacing: '-0.005em',
+      }}>{photo.label}</div>
+    </button>
+  );
+}
+
+// Decorative "photo" rendered from gradients + shapes based on hue
+function PhotoScene({ hue, compact = false }) {
+  return (
+    <svg width="100%" height="100%" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" style={{ position: 'absolute', inset: 0, display: 'block' }}>
+      <defs>
+        <linearGradient id={`sky-${hue}`} x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stopColor={`hsl(${hue}, 30%, 75%)`} />
+          <stop offset="1" stopColor={`hsl(${hue}, 25%, 60%)`} />
+        </linearGradient>
+        <linearGradient id={`grd-${hue}`} x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stopColor={`hsl(${hue}, 20%, 55%)`} />
+          <stop offset="1" stopColor={`hsl(${hue}, 25%, 35%)`} />
+        </linearGradient>
+      </defs>
+      <rect width="400" height="300" fill={`url(#sky-${hue})`} />
+      {/* subtle hills */}
+      <path d={`M0 ${200 + (hue%40)} Q 100 ${180 + (hue%30)} 200 ${210 + (hue%20)} T 400 ${200 + (hue%25)} L 400 300 L 0 300 Z`}
+        fill={`url(#grd-${hue})`} opacity="0.9" />
+      {/* sun/moon */}
+      <circle cx={70 + (hue%120)} cy={60 + (hue%40)} r={compact ? 14 : 24} fill="#fff" opacity="0.6"/>
+      {/* rectangle "building" */}
+      <rect x={130 + (hue%80)} y={140 + (hue%40)} width={120} height={90}
+        fill={`hsl(${hue}, 15%, 25%)`} opacity="0.45" rx="2"/>
+      <rect x={140 + (hue%80)} y={160 + (hue%40)} width={20} height={28}
+        fill={`hsl(${hue}, 60%, 85%)`} opacity="0.8"/>
+      <rect x={180 + (hue%80)} y={160 + (hue%40)} width={20} height={28}
+        fill={`hsl(${hue}, 60%, 85%)`} opacity="0.8"/>
+    </svg>
+  );
+}
+
+function IconPill({ children, onClick }) {
+  const [hov, setHov] = useState(false);
+  return (
+    <button onClick={onClick} onMouseEnter={() => setHov(true)} onMouseLeave={() => setHov(false)}
+      style={{
+        width: 32, height: 32, borderRadius: 999,
+        background: hov ? '#fff' : 'rgba(255,255,255,0.92)',
+        color: 'var(--ink)',
+        display: 'grid', placeItems: 'center',
+        transition: 'transform 200ms cubic-bezier(0.34, 1.56, 0.64, 1)',
+        transform: hov ? 'scale(1.1)' : 'scale(1)',
+        backdropFilter: 'blur(6px)',
+      }}>{children}</button>
+  );
+}
+
+function shift(hex, amt) {
+  // approximate darken by mixing toward black
+  const r = parseInt(hex.slice(1,3), 16);
+  const g = parseInt(hex.slice(3,5), 16);
+  const b = parseInt(hex.slice(5,7), 16);
+  const f = (v) => Math.max(0, v - amt).toString(16).padStart(2, '0');
+  return `#${f(r)}${f(g)}${f(b)}`;
+}
+
+Object.assign(window, { Hero });
+
+  </script>
+  <script type="text/babel" data-type="module" data-presets="react">
+// Property specs card — share link + key stats with animated counters
+function SpecsCard({ delay = 0 }) {
+  const [copied, setCopied] = useState(false);
+  const copy = () => {
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1400);
+  };
+
+  const stats = [
+    { icon: 'bed', label: 'Bedrooms', value: property.beds, suffix: '' },
+    { icon: 'bath', label: 'Bathrooms', value: property.baths, suffix: '' },
+    { icon: 'ruler', label: 'Floor area', value: property.floor, suffix: ' m²' },
+    { icon: 'tree', label: 'Land area', value: property.land, suffix: ' m²' },
+    { icon: 'car', label: 'Garage', value: property.garage, suffix: '' },
+    { icon: 'calendar', label: 'Built', value: property.year, suffix: '', noAnim: true },
+  ];
+
+  return (
+    <Card delay={delay} style={{ padding: 0 }}>
+      {/* Share bar */}
+      <div style={{
+        padding: '16px 22px',
+        borderBottom: '1px solid var(--line)',
+        display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap',
+        background: 'linear-gradient(180deg, #faf7f1 0%, #fff 100%)',
+      }}>
+        <div style={{
+          fontSize: 10.5, color: 'var(--ink-4)', fontWeight: 600,
+          letterSpacing: '0.08em', textTransform: 'uppercase',
+        }}>Public link</div>
+        <div style={{
+          flex: 1, minWidth: 200,
+          padding: '7px 12px',
+          background: '#fff', border: '1px solid var(--line)',
+          borderRadius: 10,
+          display: 'flex', alignItems: 'center', gap: 8,
+          fontFamily: 'JetBrains Mono, monospace', fontSize: 12.5, color: 'var(--ink-2)',
+        }}>
+          <Icon name="zap" size={13} style={{ color: 'var(--accent)' }}/>
+          {property.shareUrl}
+        </div>
+        <Btn size="sm" variant={copied ? 'default' : 'accent'} icon={copied ? 'check' : 'copy'} onClick={copy}>
+          {copied ? 'Copied' : 'Copy link'}
+        </Btn>
+        <Btn size="sm" variant="default" icon="qr">QR</Btn>
+      </div>
+
+      {/* Price + description */}
+      <div style={{ padding: '22px 22px 4px', display: 'flex', gap: 24, flexWrap: 'wrap' }}>
+        <div style={{ flex: '1 1 280px', minWidth: 260 }}>
+          <div style={{ fontSize: 10.5, color: 'var(--ink-4)', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 6 }}>Asking price</div>
+          <div className="serif" style={{ fontSize: 44, lineHeight: 1, letterSpacing: '-0.02em' }}>
+            {property.price}
+          </div>
+          <div style={{ fontSize: 12.5, color: 'var(--ink-3)', marginTop: 4, fontStyle: 'italic' }}>
+            {property.priceNote}
+          </div>
+        </div>
+        <div style={{ flex: '2 1 420px', minWidth: 280 }}>
+          <div style={{ fontSize: 10.5, color: 'var(--ink-4)', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 6 }}>About this home</div>
+          <p style={{ margin: 0, fontSize: 14, lineHeight: 1.6, color: 'var(--ink-2)', textWrap: 'pretty' }}>
+            {property.description}
+          </p>
+        </div>
+      </div>
+
+      {/* Stats grid */}
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))',
+        gap: 1,
+        background: 'var(--line)',
+        borderTop: '1px solid var(--line)',
+        marginTop: 22,
+      }}>
+        {stats.map((s, i) => <StatTile key={s.label} {...s} delay={delay + 0.3 + i * 0.06} />)}
+      </div>
+    </Card>
+  );
+}
+
+function StatTile({ icon, label, value, suffix, noAnim, delay }) {
+  const [hov, setHov] = useState(false);
+  return (
+    <div
+      onMouseEnter={() => setHov(true)}
+      onMouseLeave={() => setHov(false)}
+      style={{
+        padding: '18px 20px',
+        background: hov ? '#faf7f1' : '#fff',
+        transition: 'background 200ms',
+        position: 'relative',
+        animation: `floatIn 0.6s ${delay}s cubic-bezier(0.34, 1.56, 0.64, 1) both`,
+      }}>
+      <div style={{
+        display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+        width: 32, height: 32, borderRadius: 9,
+        background: hov ? 'var(--ink)' : 'var(--bg)',
+        color: hov ? '#fff' : 'var(--ink-2)',
+        transition: 'all 260ms cubic-bezier(0.34, 1.56, 0.64, 1)',
+        transform: hov ? 'rotate(-8deg) scale(1.1)' : 'rotate(0)',
+        marginBottom: 10,
+      }}>
+        <Icon name={icon} size={16}/>
+      </div>
+      <div style={{ fontSize: 10.5, color: 'var(--ink-4)', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 2 }}>{label}</div>
+      <div className="serif" style={{ fontSize: 28, lineHeight: 1.1, letterSpacing: '-0.02em' }}>
+        {noAnim ? value : <AnimatedNumber value={value} format={(v) => Math.round(v).toLocaleString()} />}
+        <span style={{ fontSize: 16, color: 'var(--ink-3)' }}>{suffix}</span>
+      </div>
+    </div>
+  );
+}
+
+window.SpecsCard = SpecsCard;
+
+  </script>
+  <script type="text/babel" data-type="module" data-presets="react">
+// Documents card — collapsed by default, click to expand file list
+function DocumentsCard({ delay = 0 }) {
+  const [open, setOpen] = useState(false);
+  const [hoveredRow, setHoveredRow] = useState(null);
+
+  return (
+    <Card delay={delay} style={{ padding: 0, overflow: 'hidden' }}>
+      {/* Toggle header — always visible */}
+      <button
+        onClick={() => setOpen((v) => !v)}
+        style={{
+          display: 'flex', alignItems: 'center', gap: 16,
+          padding: '20px 22px', width: '100%', textAlign: 'left',
+          background: 'transparent',
+          borderRadius: open ? 'var(--radius-lg) var(--radius-lg) 0 0' : 'var(--radius-lg)',
+          transition: 'background 200ms ease',
+        }}
+        onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--bg)'; }}
+        onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; }}
+      >
+        {/* Animated stacked document thumbnails */}
+        <DocIconStack open={open} />
+
+        {/* Title + meta */}
+        <div style={{ flex: 1, minWidth: 0 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 5 }}>
+            <h3 style={{ margin: 0, fontSize: 16, fontWeight: 700, letterSpacing: '-0.01em' }}>Documents</h3>
+            <Chip tone="default">{documents.length}</Chip>
+          </div>
+          {open ? (
+            <div style={{ fontSize: 12.5, color: 'var(--ink-3)' }}>
+              Uploaded files buyers can request during enquiry.
+            </div>
+          ) : (
+            <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
+              {documents.map((d) => (
+                <Chip key={d.id} style={{
+                  background: d.tone + '18', color: d.tone, borderColor: d.tone + '33',
+                  fontSize: 11,
+                }}>
+                  {d.type}
+                </Chip>
+              ))}
+            </div>
+          )}
+        </div>
+
+        {/* Right side: download tally + chevron */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 10, flexShrink: 0 }}>
+          {!open && (
+            <div style={{
+              display: 'flex', alignItems: 'center', gap: 5,
+              padding: '5px 10px', borderRadius: 999,
+              background: 'var(--bg-deep)', fontSize: 11.5, fontWeight: 600, color: 'var(--ink-3)',
+            }}>
+              <Icon name="download" size={12}/>
+              {documents.reduce((s, d) => s + d.downloads, 0)} downloads
+            </div>
+          )}
+          <div style={{
+            width: 28, height: 28, borderRadius: 9,
+            display: 'grid', placeItems: 'center',
+            background: 'var(--bg-deep)',
+          }}>
+            <Icon name="chevron-right" size={14} style={{
+              color: 'var(--ink-3)',
+              transition: 'transform 360ms cubic-bezier(0.34, 1.56, 0.64, 1)',
+              transform: open ? 'rotate(90deg)' : 'rotate(0deg)',
+            }}/>
+          </div>
+        </div>
+      </button>
+
+      {/* Expandable content */}
+      <div style={{
+        maxHeight: open ? 900 : 0,
+        opacity: open ? 1 : 0,
+        overflow: 'hidden',
+        transition: 'max-height 500ms cubic-bezier(0.34, 1.56, 0.64, 1), opacity 320ms ease',
+      }}>
+        <div style={{ borderTop: '1px solid var(--line)' }}>
+          {/* Header actions */}
+          <div style={{ padding: '16px 22px 10px', display: 'flex', alignItems: 'center', justifyContent: 'flex-end' }}>
+            <Btn size="sm" icon="plus" variant="default">Upload</Btn>
+          </div>
+
+          {/* Upload strip */}
+          <div style={{
+            margin: '0 22px 14px',
+            padding: '14px 16px',
+            background: 'var(--bg)',
+            border: '1.5px dashed var(--line-2)',
+            borderRadius: 14,
+            display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap',
+          }}>
+            <select style={{
+              padding: '8px 12px', fontSize: 13, fontWeight: 500,
+              borderRadius: 10, border: '1px solid var(--line)',
+              background: '#fff', color: 'var(--ink)', fontFamily: 'inherit',
+              minWidth: 160,
+            }}>
+              <option>LIM Report</option>
+              <option>Title</option>
+              <option>Builders Report</option>
+              <option>Council Records</option>
+            </select>
+            <input placeholder="e.g. LIM Report 2026" style={{
+              flex: 1, minWidth: 180,
+              padding: '8px 12px', fontSize: 13,
+              borderRadius: 10, border: '1px solid var(--line)',
+              background: '#fff', fontFamily: 'inherit',
+              color: 'var(--ink)', outline: 'none',
+            }}/>
+            <button style={{
+              padding: '8px 12px', fontSize: 12.5, fontWeight: 600,
+              borderRadius: 10, border: '1px solid var(--line-2)',
+              background: '#fff', color: 'var(--ink-2)',
+            }}>Choose file</button>
+            <Btn size="sm" variant="accent" icon="download" style={{ transform: 'scaleX(-1)' }}>Upload</Btn>
+          </div>
+
+          {/* Doc rows */}
+          <div style={{ padding: '0 10px 14px' }}>
+            {documents.map((d, i) => (
+              <DocRow key={d.id} doc={d}
+                delay={0.05 + i * 0.08}
+                hovered={hoveredRow === d.id}
+                onEnter={() => setHoveredRow(d.id)}
+                onLeave={() => setHoveredRow(null)}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+    </Card>
+  );
+}
+
+// Decorative stacked miniature document icons
+function DocIconStack({ open }) {
+  const [hov, setHov] = useState(false);
+  const active = open || hov;
+  return (
+    <div
+      style={{ position: 'relative', width: 56, height: 56, flexShrink: 0 }}
+      onMouseEnter={() => setHov(true)}
+      onMouseLeave={() => setHov(false)}
+    >
+      {documents.map((d, i) => {
+        const offsets = [
+          { x: -8, y: 4, r: -10 },
+          { x:  0, y: 0, r:  0  },
+          { x:  8, y: 4, r:  10 },
+        ];
+        const o = offsets[i];
+        return (
+          <div key={d.id} style={{
+            position: 'absolute',
+            left: '50%', top: '50%',
+            width: 32, height: 40,
+            background: '#fff',
+            borderRadius: 6,
+            border: '1px solid var(--line)',
+            boxShadow: active
+              ? `0 8px 16px -6px ${d.tone}55`
+              : '0 2px 4px rgba(27,26,23,0.07)',
+            transition: 'transform 380ms cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 280ms ease',
+            transform: active
+              ? `translate(calc(-50% + ${o.x}px), calc(-50% + ${o.y}px)) rotate(${o.r}deg)`
+              : `translate(calc(-50% + ${i * 2 - 2}px), calc(-50% - ${i * 1}px))`,
+            zIndex: i + 1,
+            overflow: 'hidden',
+          }}>
+            {/* folded corner */}
+            <div style={{
+              position: 'absolute', top: 0, right: 0,
+              width: 10, height: 10,
+              background: 'linear-gradient(225deg, transparent 50%, #e4ddd0 50%)',
+            }}/>
+            {/* lines */}
+            <div style={{ padding: '8px 4px 0', display: 'flex', flexDirection: 'column', gap: 2 }}>
+              {[90, 70, 85, 60].map((w, j) => (
+                <div key={j} style={{ height: 2, width: `${w}%`, background: '#e4ddd0', borderRadius: 1 }}/>
+              ))}
+            </div>
+            {/* color accent bar */}
+            <div style={{
+              position: 'absolute', bottom: 0, left: 0, right: 0,
+              height: 4, background: d.tone,
+            }}/>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+function DocRow({ doc, delay, hovered, onEnter, onLeave }) {
+  return (
+    <div
+      onMouseEnter={onEnter}
+      onMouseLeave={onLeave}
+      style={{
+        display: 'flex', alignItems: 'center', gap: 14,
+        padding: '12px 14px',
+        borderRadius: 14,
+        background: hovered ? 'var(--bg)' : 'transparent',
+        transition: 'all 260ms cubic-bezier(0.34, 1.56, 0.64, 1)',
+        transform: hovered ? 'translateX(4px)' : 'translateX(0)',
+        cursor: 'pointer',
+        animation: `floatIn 0.6s ${delay}s cubic-bezier(0.34, 1.56, 0.64, 1) both`,
+      }}
+    >
+      {/* Document thumbnail */}
+      <div style={{
+        position: 'relative',
+        width: 52, height: 64,
+        background: '#fff', borderRadius: 6,
+        border: '1px solid var(--line)',
+        boxShadow: hovered ? `0 10px 18px -8px ${doc.tone}55` : '0 2px 4px rgba(27,26,23,0.06)',
+        transition: 'all 260ms cubic-bezier(0.34, 1.56, 0.64, 1)',
+        transform: hovered ? 'rotate(-4deg) translateY(-2px)' : 'rotate(0)',
+        flexShrink: 0,
+        overflow: 'hidden',
+      }}>
+        <div style={{
+          position: 'absolute', top: 0, right: 0,
+          width: 14, height: 14,
+          background: 'linear-gradient(225deg, transparent 50%, #e4ddd0 50%)',
+        }}/>
+        <div style={{ padding: '10px 6px 0', display: 'flex', flexDirection: 'column', gap: 3 }}>
+          {[90, 70, 85, 60, 75].map((w, i) => (
+            <div key={i} style={{ height: 2, width: `${w}%`, background: '#e4ddd0', borderRadius: 1 }}/>
+          ))}
+        </div>
+        <div style={{
+          position: 'absolute', bottom: 0, left: 0, right: 0,
+          height: 4, background: doc.tone,
+        }}/>
+        <div style={{
+          position: 'absolute', bottom: 8, left: 4,
+          fontSize: 7, fontWeight: 700,
+          color: doc.tone, letterSpacing: '0.05em',
+        }}>PDF</div>
+      </div>
+
+      {/* Info */}
+      <div style={{ flex: 1, minWidth: 0 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 3 }}>
+          <span style={{ fontSize: 14, fontWeight: 600, letterSpacing: '-0.005em' }}>{doc.label}</span>
+          <Chip tone="default" style={{ background: doc.tone + '15', color: doc.tone, borderColor: doc.tone + '33' }}>
+            {doc.type}
+          </Chip>
+        </div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: 12, color: 'var(--ink-3)' }}>
+          <span>{doc.pages} pages</span>
+          <span style={{ width: 3, height: 3, borderRadius: '50%', background: 'var(--ink-4)' }}/>
+          <span>{doc.size}</span>
+          <span style={{ width: 3, height: 3, borderRadius: '50%', background: 'var(--ink-4)' }}/>
+          <span>Uploaded {doc.uploaded}</span>
+        </div>
+      </div>
+
+      {/* Downloads mini-stat */}
+      <div style={{
+        display: hovered ? 'none' : 'flex', alignItems: 'center', gap: 6,
+        padding: '4px 10px', borderRadius: 999,
+        background: 'var(--bg-deep)',
+        fontSize: 11.5, fontWeight: 600, color: 'var(--ink-3)',
+      }}>
+        <Icon name="download" size={11}/> {doc.downloads}
+      </div>
+
+      {/* Actions (on hover) */}
+      <div style={{
+        display: 'flex', gap: 6,
+        opacity: hovered ? 1 : 0,
+        transform: hovered ? 'translateX(0)' : 'translateX(10px)',
+        transition: 'all 260ms cubic-bezier(0.34, 1.56, 0.64, 1)',
+        pointerEvents: hovered ? 'auto' : 'none',
+      }}>
+        <Btn size="sm" variant="ghost" icon="eye">Preview</Btn>
+        <Btn size="sm" variant="default" icon="download">Download</Btn>
+      </div>
+    </div>
+  );
+}
+
+window.DocumentsCard = DocumentsCard;
+
+  </script>
+  <script type="text/babel" data-type="module" data-presets="react">
+// Leads card — collapsed by default, click to expand enquiry list
+function LeadsCard({ delay = 0 }) {
+  const [open, setOpen] = useState(false);
+  const [expanded, setExpanded] = useState(null);
+  const [filter, setFilter] = useState('all');
+
+  const filtered = leads.filter((l) => {
+    if (filter === 'all') return true;
+    if (filter === 'hot') return l.hot;
+    if (filter === 'new') return l.stage === 'New';
+    return true;
+  });
+
+  const hotCount = leads.filter((l) => l.hot).length;
+
+  return (
+    <Card delay={delay} style={{ padding: 0, overflow: 'hidden' }}>
+      {/* Toggle header — always visible */}
+      <button
+        onClick={() => setOpen((v) => !v)}
+        style={{
+          display: 'flex', alignItems: 'center', gap: 16,
+          padding: '20px 22px', width: '100%', textAlign: 'left',
+          background: 'transparent',
+          borderRadius: open ? 'var(--radius-lg) var(--radius-lg) 0 0' : 'var(--radius-lg)',
+          transition: 'background 200ms ease',
+        }}
+        onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--bg)'; }}
+        onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; }}
+      >
+        {/* Animated avatar cluster */}
+        <LeadAvatarCluster open={open} />
+
+        {/* Title + meta */}
+        <div style={{ flex: 1, minWidth: 0 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 5 }}>
+            <h3 style={{ margin: 0, fontSize: 16, fontWeight: 700, letterSpacing: '-0.01em' }}>Leads</h3>
+            <Chip tone="default">{leads.length}</Chip>
+            {hotCount > 0 && (
+              <Chip tone="hot">
+                <Icon name="flame" size={10}/> {hotCount} hot
+              </Chip>
+            )}
+          </div>
+          {open ? (
+            <div style={{ fontSize: 12.5, color: 'var(--ink-3)' }}>
+              Enquiries from buyers who've viewed your listing.
+            </div>
+          ) : (
+            <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+              <span style={{ fontSize: 12.5, color: 'var(--ink-3)' }}>
+                {leads.filter(l => l.stage === 'New').length} new · {property.shareClicks} share clicks this week
+              </span>
+            </div>
+          )}
+        </div>
+
+        {/* Chevron */}
+        <div style={{
+          width: 28, height: 28, borderRadius: 9,
+          display: 'grid', placeItems: 'center',
+          background: 'var(--bg-deep)', flexShrink: 0,
+        }}>
+          <Icon name="chevron-right" size={14} style={{
+            color: 'var(--ink-3)',
+            transition: 'transform 360ms cubic-bezier(0.34, 1.56, 0.64, 1)',
+            transform: open ? 'rotate(90deg)' : 'rotate(0deg)',
+          }}/>
+        </div>
+      </button>
+
+      {/* Expandable content */}
+      <div style={{
+        maxHeight: open ? 1100 : 0,
+        opacity: open ? 1 : 0,
+        overflow: 'hidden',
+        transition: 'max-height 550ms cubic-bezier(0.34, 1.56, 0.64, 1), opacity 320ms ease',
+      }}>
+        <div style={{ borderTop: '1px solid var(--line)' }}>
+          {/* Filter pills */}
+          <div style={{ padding: '14px 22px 10px', display: 'flex', justifyContent: 'flex-end' }}>
+            <div style={{
+              display: 'flex', padding: 3, background: 'var(--bg)',
+              borderRadius: 10, border: '1px solid var(--line)',
+            }}>
+              {[{k:'all',l:'All'}, {k:'hot',l:'Hot'}, {k:'new',l:'New'}].map(({k, l}) => (
+                <button key={k} onClick={(e) => { e.stopPropagation(); setFilter(k); }} style={{
+                  padding: '5px 12px', fontSize: 12, fontWeight: 600,
+                  borderRadius: 7,
+                  background: filter === k ? '#fff' : 'transparent',
+                  color: filter === k ? 'var(--ink)' : 'var(--ink-3)',
+                  boxShadow: filter === k ? '0 1px 2px rgba(27,26,23,0.08)' : 'none',
+                  transition: 'all 200ms',
+                }}>{l}</button>
+              ))}
+            </div>
+          </div>
+
+          {/* Lead rows */}
+          <div style={{ padding: '0 10px 16px' }}>
+            {filtered.map((l, i) => (
+              <LeadRow key={l.id} lead={l}
+                delay={0.05 + i * 0.08}
+                expanded={expanded === l.id}
+                onToggle={() => setExpanded(expanded === l.id ? null : l.id)}
+              />
+            ))}
+          </div>
+
+          {/* Footer summary */}
+          <div style={{
+            padding: '14px 22px',
+            borderTop: '1px solid var(--line)',
+            background: 'var(--bg)',
+            display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+            flexWrap: 'wrap', gap: 12,
+            borderRadius: '0 0 var(--radius-lg) var(--radius-lg)',
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
+              <Sparkline/>
+              <div>
+                <div style={{ fontSize: 12, color: 'var(--ink-3)' }}>Enquiries this week</div>
+                <div style={{ fontSize: 14, fontWeight: 600, letterSpacing: '-0.005em' }}>
+                  5 leads · {property.shareClicks} share clicks
+                </div>
+              </div>
+            </div>
+            <Btn size="sm" variant="dark" icon="sparkles" iconRight="arrow-right">
+              Send follow-up form
+            </Btn>
+          </div>
+        </div>
+      </div>
+    </Card>
+  );
+}
+
+// Overlapping avatar circles for the collapsed header
+function LeadAvatarCluster({ open }) {
+  const [hov, setHov] = useState(false);
+  const active = open || hov;
+  return (
+    <div
+      style={{ position: 'relative', width: 56, height: 56, flexShrink: 0 }}
+      onMouseEnter={() => setHov(true)}
+      onMouseLeave={() => setHov(false)}
+    >
+      {leads.map((l, i) => {
+        // fan out positions
+        const fanAngles = [-40, -20, 0, 20, 40];
+        const fanRadius = 18;
+        const angle = (fanAngles[i] * Math.PI) / 180;
+        const fx = Math.sin(angle) * fanRadius;
+        const fy = -Math.abs(Math.cos(angle)) * fanRadius * 0.4;
+
+        // stacked positions (slight offset)
+        const sx = (i - 2) * 3;
+        const sy = 0;
+
+        return (
+          <div key={l.id} style={{
+            position: 'absolute',
+            left: '50%', top: '50%',
+            width: 30, height: 30,
+            borderRadius: '50%',
+            background: `linear-gradient(135deg, ${l.accent} 0%, ${l.accent}cc 100%)`,
+            border: '2px solid #fff',
+            boxShadow: active ? `0 6px 14px -4px ${l.accent}55` : '0 1px 2px rgba(27,26,23,0.1)',
+            display: 'grid', placeItems: 'center',
+            color: '#fff', fontSize: 10, fontWeight: 700, letterSpacing: '-0.01em',
+            transition: 'transform 420ms cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 280ms ease',
+            transform: active
+              ? `translate(calc(-50% + ${fx}px), calc(-50% + ${fy}px))`
+              : `translate(calc(-50% + ${sx}px), calc(-50% + ${sy}px))`,
+            zIndex: i + 1,
+          }}>
+            {l.initials}
+            {l.hot && (
+              <div style={{
+                position: 'absolute', top: -2, right: -2,
+                width: 10, height: 10, borderRadius: '50%',
+                background: '#ff5a3c', border: '1.5px solid #fff',
+              }}/>
+            )}
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+function LeadRow({ lead, delay, expanded, onToggle }) {
+  const [hov, setHov] = useState(false);
+  return (
+    <div
+      onMouseEnter={() => setHov(true)}
+      onMouseLeave={() => setHov(false)}
+      style={{
+        borderRadius: 14,
+        background: hov || expanded ? 'var(--bg)' : 'transparent',
+        transition: 'background 200ms',
+        animation: `floatIn 0.6s ${delay}s cubic-bezier(0.34, 1.56, 0.64, 1) both`,
+        overflow: 'hidden',
+        marginBottom: 2,
+      }}
+    >
+      <button onClick={onToggle} style={{
+        display: 'flex', alignItems: 'center', gap: 14,
+        padding: '12px 14px',
+        width: '100%', textAlign: 'left',
+        transition: 'transform 260ms cubic-bezier(0.34, 1.56, 0.64, 1)',
+        transform: hov && !expanded ? 'translateX(3px)' : 'translateX(0)',
+      }}>
+        {/* Avatar */}
+        <div style={{
+          position: 'relative',
+          width: 42, height: 42, borderRadius: '50%',
+          background: `linear-gradient(135deg, ${lead.accent} 0%, ${lead.accent}aa 100%)`,
+          display: 'grid', placeItems: 'center', color: '#fff',
+          fontWeight: 600, fontSize: 14, letterSpacing: '-0.01em',
+          boxShadow: hov ? `0 8px 16px -6px ${lead.accent}66` : '0 1px 2px rgba(27,26,23,0.1)',
+          transition: 'all 260ms cubic-bezier(0.34, 1.56, 0.64, 1)',
+          transform: hov ? 'scale(1.06) rotate(-4deg)' : 'scale(1)',
+          flexShrink: 0,
+        }}>
+          {lead.initials}
+          {lead.hot && (
+            <div style={{
+              position: 'absolute', top: -2, right: -2,
+              width: 16, height: 16, borderRadius: '50%',
+              background: '#ff5a3c', color: '#fff',
+              display: 'grid', placeItems: 'center',
+              border: '2px solid #fff',
+              animation: 'popIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both',
+            }}>
+              <Icon name="flame" size={8}/>
+            </div>
+          )}
+        </div>
+
+        {/* Name + preview */}
+        <div style={{ flex: 1, minWidth: 0 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 2 }}>
+            <span style={{ fontSize: 14, fontWeight: 600, letterSpacing: '-0.005em' }}>{lead.name}</span>
+            <Chip tone={stageTone(lead.stage)}>{lead.stage}</Chip>
+          </div>
+          <div style={{ fontSize: 12.5, color: 'var(--ink-3)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', maxWidth: '44ch' }}>
+            {lead.message}
+          </div>
+        </div>
+
+        {/* Time + chevron */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+          <span style={{ fontSize: 11.5, color: 'var(--ink-4)', fontVariantNumeric: 'tabular-nums' }}>{lead.when}</span>
+          <Icon name="chevron-right" size={14} style={{
+            color: 'var(--ink-4)',
+            transition: 'transform 260ms cubic-bezier(0.34, 1.56, 0.64, 1)',
+            transform: expanded ? 'rotate(90deg)' : 'rotate(0)',
+          }}/>
+        </div>
+      </button>
+
+      {/* Expanded detail */}
+      <div style={{
+        maxHeight: expanded ? 180 : 0,
+        opacity: expanded ? 1 : 0,
+        transition: 'max-height 360ms cubic-bezier(0.34, 1.56, 0.64, 1), opacity 280ms',
+        overflow: 'hidden',
+      }}>
+        <div style={{
+          padding: '6px 16px 16px 70px',
+          display: 'flex', flexDirection: 'column', gap: 10,
+        }}>
+          <div style={{
+            padding: 12, background: '#fff',
+            borderRadius: 12, border: '1px solid var(--line)',
+            fontSize: 13, lineHeight: 1.5, color: 'var(--ink-2)',
+          }}>
+            "{lead.message}"
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 14, flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 5, fontSize: 12, color: 'var(--ink-3)' }}>
+              <Icon name="mail" size={12}/> {lead.email}
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 5, fontSize: 12, color: 'var(--ink-3)' }}>
+              <Icon name="phone" size={12}/> {lead.phone}
+            </div>
+            <div style={{ flex: 1 }}/>
+            <Btn size="sm" variant="ghost" icon="mail">Reply</Btn>
+            <Btn size="sm" variant="accent" icon="send">Send form</Btn>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function stageTone(s) {
+  if (s === 'New') return 'accent';
+  if (s === 'Qualified') return 'good';
+  if (s === 'Following up') return 'warn';
+  if (s === 'Closed') return 'muted';
+  return 'default';
+}
+
+function Sparkline() {
+  const data = [2, 1, 3, 2, 4, 3, 5];
+  const max = Math.max(...data);
+  return (
+    <svg width="78" height="34" viewBox="0 0 78 34">
+      <defs>
+        <linearGradient id="sp" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stopColor="var(--accent)" stopOpacity="0.25"/>
+          <stop offset="1" stopColor="var(--accent)" stopOpacity="0"/>
+        </linearGradient>
+      </defs>
+      {(() => {
+        const pts = data.map((v, i) => [i * (78 / (data.length - 1)), 30 - (v / max) * 24]);
+        const path = pts.map(([x, y], i) => `${i === 0 ? 'M' : 'L'}${x},${y}`).join(' ');
+        const area = path + ` L78,34 L0,34 Z`;
+        return (
+          <>
+            <path d={area} fill="url(#sp)"/>
+            <path d={path} fill="none" stroke="var(--accent)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+            {pts.map(([x, y], i) => (
+              <circle key={i} cx={x} cy={y} r={i === pts.length - 1 ? 3 : 1.8} fill="var(--accent)"/>
+            ))}
+          </>
+        );
+      })()}
+    </svg>
+  );
+}
+
+window.LeadsCard = LeadsCard;
+
+  </script>
+  <script type="text/babel" data-type="module" data-presets="react">
+// Tweaks panel
+function TweaksPanel({ state, setState, visible }) {
+  if (!visible) return null;
+  const accents = {
+    indigo: '#2d2bff',
+    forest: '#0f7a4d',
+    amber:  '#b4530a',
+    slate:  '#1b1a17',
+    rose:   '#c6361d',
+  };
+  return (
+    <div style={{
+      position: 'fixed', right: 20, bottom: 20,
+      width: 280, zIndex: 50,
+      background: '#fff', borderRadius: 18,
+      border: '1px solid var(--line)',
+      boxShadow: '0 24px 48px -16px rgba(27,26,23,0.25)',
+      padding: 16,
+      animation: 'floatIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both',
+    }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 12 }}>
+        <Icon name="sparkles" size={15} style={{ color: 'var(--accent)' }}/>
+        <div style={{ fontSize: 14, fontWeight: 700 }}>Tweaks</div>
+      </div>
+
+      <Row label="Motion">
+        <Pills opts={['subtle', 'lively', 'off']} value={state.motion}
+          onChange={(v) => setState({ ...state, motion: v })}/>
+      </Row>
+
+      <Row label="Accent">
+        <div style={{ display: 'flex', gap: 6 }}>
+          {Object.entries(accents).map(([k, c]) => (
+            <button key={k} onClick={() => setState({ ...state, accent: k })} title={k} style={{
+              width: 24, height: 24, borderRadius: 7,
+              background: c,
+              border: state.accent === k ? '2px solid var(--ink)' : '2px solid transparent',
+              outline: state.accent === k ? '2px solid var(--bg-deep)' : 'none',
+              transition: 'transform 200ms cubic-bezier(0.34, 1.56, 0.64, 1)',
+              transform: state.accent === k ? 'scale(1.1)' : 'scale(1)',
+            }}/>
+          ))}
+        </div>
+      </Row>
+
+      <Row label="Density">
+        <Pills opts={['comfortable', 'compact']} value={state.density}
+          onChange={(v) => setState({ ...state, density: v })}/>
+      </Row>
+
+      <Row label="Hover tilt" last>
+        <button onClick={() => setState({ ...state, hoverTilt: !state.hoverTilt })} style={{
+          width: 34, height: 20, borderRadius: 12,
+          background: state.hoverTilt ? 'var(--accent)' : 'var(--bg-deep)',
+          position: 'relative', transition: 'background 200ms',
+        }}>
+          <span style={{
+            position: 'absolute', top: 2, left: state.hoverTilt ? 16 : 2,
+            width: 16, height: 16, borderRadius: '50%', background: '#fff',
+            boxShadow: '0 1px 2px rgba(0,0,0,0.2)',
+            transition: 'left 220ms cubic-bezier(0.34, 1.56, 0.64, 1)',
+          }}/>
+        </button>
+      </Row>
+    </div>
+  );
+}
+
+function Row({ label, last, children }) {
+  return (
+    <div style={{
+      display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+      padding: '10px 0',
+      borderBottom: last ? 'none' : '1px solid var(--line)',
+    }}>
+      <div style={{ fontSize: 12, color: 'var(--ink-3)', fontWeight: 500 }}>{label}</div>
+      {children}
+    </div>
+  );
+}
+
+function Pills({ opts, value, onChange }) {
+  return (
+    <div style={{ display: 'flex', padding: 3, background: 'var(--bg)', borderRadius: 9, border: '1px solid var(--line)' }}>
+      {opts.map((o) => (
+        <button key={o} onClick={() => onChange(o)} style={{
+          padding: '3px 10px', fontSize: 11, fontWeight: 600,
+          borderRadius: 7,
+          background: value === o ? '#fff' : 'transparent',
+          color: value === o ? 'var(--ink)' : 'var(--ink-3)',
+          boxShadow: value === o ? '0 1px 2px rgba(27,26,23,0.08)' : 'none',
+          textTransform: 'capitalize',
+        }}>{o}</button>
+      ))}
+    </div>
+  );
+}
+
+window.TweaksPanel = TweaksPanel;
+
+  </script>
+  <script type="text/babel" data-type="module" data-presets="react">
+const { useState, useEffect, useMemo } = React;
+
+function App() {
+  const initialTweaks = JSON.parse(
+    document.getElementById('tweak-defaults').textContent
+      .replace(/\/\*EDITMODE-BEGIN\*\//, '')
+      .replace(/\/\*EDITMODE-END\*\//, '')
+      .trim()
+  );
+  const [tweaks, setTweaks] = useState(initialTweaks);
+  const [tweaksVisible, setTweaksVisible] = useState(false);
+
+  // Apply accent CSS variable
+  useEffect(() => {
+    const accents = {
+      indigo: { accent: '#2d2bff', soft: '#eeedff', ink: '#1a18cc' },
+      forest: { accent: '#0f7a4d', soft: '#dff3e7', ink: '#0a5836' },
+      amber:  { accent: '#b4530a', soft: '#fbe8d4', ink: '#8a3f06' },
+      slate:  { accent: '#1b1a17', soft: '#ebe5d9', ink: '#000' },
+      rose:   { accent: '#c6361d', soft: '#ffe9e4', ink: '#8a230f' },
+    };
+    const a = accents[tweaks.accent] || accents.indigo;
+    document.documentElement.style.setProperty('--accent', a.accent);
+    document.documentElement.style.setProperty('--accent-soft', a.soft);
+    document.documentElement.style.setProperty('--accent-ink', a.ink);
+  }, [tweaks.accent]);
+
+  // Tweaks protocol
+  useEffect(() => {
+    const handler = (ev) => {
+      const d = ev.data;
+      if (!d || typeof d !== 'object') return;
+      if (d.type === '__activate_edit_mode') setTweaksVisible(true);
+      if (d.type === '__deactivate_edit_mode') setTweaksVisible(false);
+    };
+    window.addEventListener('message', handler);
+    window.parent.postMessage({ type: '__edit_mode_available' }, '*');
+    return () => window.removeEventListener('message', handler);
+  }, []);
+
+  const updateTweaks = (next) => {
+    setTweaks(next);
+    window.parent.postMessage({ type: '__edit_mode_set_keys', edits: next }, '*');
+  };
+
+  const lively = tweaks.motion === 'lively';
+  const off = tweaks.motion === 'off';
+  const tilt = tweaks.hoverTilt && lively;
+  const pad = tweaks.density === 'compact' ? 20 : 32;
+
+  // motion "off" — remove animations
+  useEffect(() => {
+    const style = document.getElementById('motion-off-style') || document.createElement('style');
+    style.id = 'motion-off-style';
+    style.textContent = off ? `.card, .card * { animation: none !important; }` : '';
+    if (!style.parentElement) document.head.appendChild(style);
+  }, [off]);
+
+  return (
+    <div style={{
+      display: 'flex',
+      minHeight: '100vh',
+      background: 'var(--bg)',
+      color: 'var(--ink)',
+    }}>
+      <Sidebar/>
+      <main style={{
+        flex: 1, minWidth: 0,
+        padding: `${pad}px ${pad + 8}px ${pad + 20}px`,
+        maxWidth: 1280, margin: '0 auto', width: '100%',
+      }}>
+        {/* Breadcrumb */}
+        <div style={{
+          display: 'flex', alignItems: 'center', gap: 8,
+          marginBottom: 22, fontSize: 12.5, color: 'var(--ink-3)',
+          animation: 'floatIn 0.5s 0s cubic-bezier(0.34, 1.56, 0.64, 1) both',
+        }}>
+          <a style={{ color: 'var(--ink-3)', display: 'inline-flex', alignItems: 'center', gap: 5 }}>
+            <Icon name="arrow-left" size={13}/> Back to listings
+          </a>
+          <span style={{ color: 'var(--ink-4)' }}>/</span>
+          <span style={{ color: 'var(--ink-2)', fontWeight: 500 }}>{property.title}</span>
+          <div style={{ flex: 1 }}/>
+          <button style={{
+            display: 'inline-flex', alignItems: 'center', gap: 6,
+            padding: '4px 9px', borderRadius: 999,
+            background: '#fff', border: '1px solid var(--line)',
+            fontSize: 11.5, fontWeight: 500, color: 'var(--ink-3)',
+          }}>
+            <Icon name="bell" size={11}/> Notify me on new leads
+          </button>
+          <Btn size="sm" variant="ghost" icon="trash" style={{ color: 'var(--danger)' }}>Delete</Btn>
+        </div>
+
+        {/* Cards */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+          <Hero delay={0.05}/>
+          <SpecsCard delay={0.15}/>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'minmax(0, 1.15fr) minmax(0, 1fr)',
+            gap: 20,
+          }}>
+            <DocumentsCard delay={0.25}/>
+            <LeadsCard delay={0.3}/>
+          </div>
+
+          {/* Footer */}
+          <div style={{
+            padding: '16px 4px',
+            fontSize: 11.5, color: 'var(--ink-4)',
+            display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+            animation: 'floatIn 0.6s 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both',
+          }}>
+            <span>Listing ID · <span className="mono">#d8ksv-rangitoto</span></span>
+            <span>Last edited yesterday · autosaved</span>
+          </div>
+        </div>
+      </main>
+
+      {/* Apply hover tilt override */}
+      <HoverTiltContext.Provider value={tilt}>
+        <span/>
+      </HoverTiltContext.Provider>
+
+      <TweaksPanel state={tweaks} setState={updateTweaks} visible={tweaksVisible}/>
+    </div>
+  );
+}
+
+// small no-op context to keep tree happy (tilt wiring is per-card via data)
+const HoverTiltContext = React.createContext(false);
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+
+  </script>
+</body>
+</html>
